@@ -18,3 +18,13 @@ canvas {
   position: fixed;
   z-index: -1;
 }
+
+#root {
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+}
+
+*:focus {
+  outline: 0 !important;
+}
