@@ -1,0 +1,80 @@
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid green;
+}
+
+.slider-avatar {
+  display: flex;
+  border-radius: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.slider-constraints {
+  display: flex;
+  position: absolute;
+}
+
+.slider-height {
+  height: 750px;
+}
+
+.slider-axis {
+  display: flex;
+  width: 70px;
+  margin: 20px;
+  border-radius: 75px;
+  background-color: #525252;
+  opacity: 0.8;
+}
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  .slider-avatar {
+    height: 100px;
+  }
+
+  .slider-width {
+    width: 100px;
+  }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+  .slider-avatar {
+    height: 150px;
+  }
+
+  .slider-width {
+    width: 150px;
+  }
+}
+
+/* For Larger */
+@media screen and (min-width: 780px) {
+  .slider-avatar {
+    height: 200px;
+  }
+  
+  .slider-width {
+    width: 200px;
+  }
+}
+
+/* For portrait */
+@media screen and (orientation: portrait) {
+  #toolbar {
+    width: 100%;
+  }
+}
+
+/* For landscape */
+@media screen and (orientation: landscape) {
+  #toolbar {
+    position: fixed;
+    width: 2.65em;
+    height: 100%;
+  }
+}
