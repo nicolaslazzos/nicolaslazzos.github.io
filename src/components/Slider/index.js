@@ -4,45 +4,49 @@ import ProfilePicture from "../../assets/profile.jpg";
 
 import "./styles.css";
 
-function Slider({ sections, onChange }) {
+function Slider(props) {
+  const { sections, orientation } = { sections: 1, orientation: "vertical", ...props };
+
   const constraintsRef = React.useRef(null);
   const containerRef = React.useRef(null);
 
-  const [height, setHeight] = React.useState(window.innerHeight);
-
-  React.useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const handleResize = () => setHeight(window.innerHeight);
-
   const calculate = (xDrag, yDrag) => {
     const { x, y, height, width } = containerRef.current.getBoundingClientRect();
+
+    const data = {};
+
+    if (orientation === "vertical") {
+      data.drag = yDrag;
+      data.init = y;
+      data.length = height;
+    } else {
+      data.drag = xDrag;
+      data.init = x;
+      data.length = width;
+    }
+
+    const { drag, init, length } = data;
     const event = { percent: 0, section: 0 };
 
-    if (yDrag <= y) {
+    if (drag <= init) {
       event.percent = 0;
-    } else if (yDrag > y && yDrag < y + height) {
-      const percent = Math.round(((yDrag - y) * 100) / height);
+    } else if (drag > init && drag < init + length) {
+      const percent = Math.round(((drag - init) * 100) / length);
       event.percent = percent;
     } else {
       event.percent = 100;
     }
 
-    event.section = parseInt(event.percent / (100 / sections));
+    const section = parseInt(event.percent / (100 / sections));
+    event.section = section > sections - 1 ? section - 1 : section;
 
-    onChange?.(event);
+    props?.onChange?.(event);
   };
 
-  const mainheight = { height: 700 };
-  const axisHeight = { height: 700 - 40 };
-
   return (
-    <div ref={containerRef} className="slider-container slider-width" style={mainheight}>
-      <div className="slider-axis" style={axisHeight} />
-      <motion.div className="slider-constraints slider-width" ref={constraintsRef} style={mainheight}>
+    <div ref={containerRef} className="slider-container slider-width">
+      <div className="slider-axis" />
+      <motion.div className="slider-constraints" ref={constraintsRef}>
         <motion.img
           className="slider-avatar slider-width"
           drag
@@ -57,31 +61,5 @@ function Slider({ sections, onChange }) {
     </div>
   );
 }
-
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    height: 600,
-    width: 150
-  },
-  avatar: { width: 150, height: 150, borderRadius: 150, overflow: "hidden", cursor: "pointer" },
-  constraints: {
-    position: "absolute",
-    height: 600,
-    width: 150
-  },
-  axis: {
-    display: "flex",
-    position: "relative",
-    width: "45%",
-    height: "100%",
-    margin: 20,
-    borderRadius: 75,
-    backgroundColor: "#525252",
-    opacity: 0.8
-  }
-};
 
 export default Slider;

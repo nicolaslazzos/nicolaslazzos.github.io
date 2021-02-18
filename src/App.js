@@ -32,7 +32,7 @@ function App() {
           flex: 1,
           justifyContent: "center",
           alignItems: "flex-end",
-          padding: 30
+          padding: 40
           // border: "1px solid red"
         }}
       >
@@ -44,7 +44,7 @@ function App() {
           flexDirection: "column",
           flex: 3,
           justifyContent: "center",
-          padding: 30,
+          padding: 40,
           // border: "1px solid yellow",
           overflowY: "scroll"
         }}
@@ -58,7 +58,7 @@ function App() {
           flex: 0.5,
           justifyContent: "center",
           alignItems: "flex-start",
-          padding: 30
+          padding: 40
           // border: "1px solid red"
         }}
       >

@@ -4,7 +4,7 @@ import "./styles.css";
 
 const Information = () => {
   return (
-    <div>
+    <div className="information-container">
       <p className="information-title">Nicolas Lazzos</p>
       <p className="information-subtitle">Information Systems Engineer</p>
       <br />
