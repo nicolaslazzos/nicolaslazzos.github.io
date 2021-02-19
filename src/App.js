@@ -4,15 +4,9 @@ import Information from "./components/Information";
 import Pagination from "./components/Pagination";
 
 function App() {
-  const [height, setHeight] = React.useState(window.innerHeight);
+  const [section, setSection] = React.useState(0);
 
-  React.useEffect(() => {
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const handleResize = () => setHeight(window.innerHeight);
+  const sections = ["about.", "education.", "experience.", "secial media."];
 
   return (
     <div
@@ -20,7 +14,6 @@ function App() {
         display: "flex",
         flex: 1,
         flexDirection: "row",
-        // alignItems: "center",
         justifyContent: "center",
         height: "100vh"
       }}
@@ -33,10 +26,9 @@ function App() {
           justifyContent: "center",
           alignItems: "flex-end",
           padding: 40
-          // border: "1px solid red"
         }}
       >
-        <Slider sections={4} onChange={(e) => console.log(e)} />
+        <Slider sections={4} onChange={(e) => setSection(e.section)} />
       </div>
       <div
         style={{
@@ -45,11 +37,10 @@ function App() {
           flex: 3,
           justifyContent: "center",
           padding: 40,
-          // border: "1px solid yellow",
           overflowY: "scroll"
         }}
       >
-        <Information />
+        <Information section={section} />
       </div>
       <div
         style={{
@@ -59,15 +50,12 @@ function App() {
           justifyContent: "center",
           alignItems: "flex-start",
           padding: 40
-          // border: "1px solid red"
         }}
       >
-        <Pagination />
+        <Pagination page={sections[section]} />
       </div>
     </div>
   );
 }
-
-const styles = {};
 
 export default App;
