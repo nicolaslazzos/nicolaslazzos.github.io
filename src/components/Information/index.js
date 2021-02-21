@@ -1,6 +1,8 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 
+import Skill from "../Skill";
+
 import ReactLogo from "../../assets/react.png";
 import NodeLogo from "../../assets/node.png";
 
@@ -71,22 +73,32 @@ const Information = ({ section: sec }) => {
     3: [
       <div className="information-content">
         <div className="skills-container">
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
-          <motion.div className="skill"></motion.div>
+          <Skill>JavaScript</Skill>
+          <Skill>TypeScript</Skill>
+          <Skill>React</Skill>
+          <Skill>React Native</Skill>
+          <Skill>Redux</Skill>
+          <Skill>NodeJS</Skill>
+          <Skill>Express</Skill>
+          <Skill>MongoDB</Skill>
+          <Skill>Mongoose</Skill>
+          <Skill>GraphQL</Skill>
+          <Skill>Apollo</Skill>
+          <Skill>Webpack</Skill>
+          <Skill>Firebase</Skill>
+          <Skill>Python</Skill>
+          <Skill>Django</Skill>
         </div>
+      </div>
+    ],
+    4: [
+      <div className="information-content">
+        <p className="information-p">August 2020 - Now</p>
+        <p className="information-t">Software Developer</p>
+        <p className="information-p">Mobbex</p>
+        <p className="information-d">
+          Currently working with React and React Native using TypeScript in the web and mobile applications.
+        </p>
       </div>
     ]
   };

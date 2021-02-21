@@ -5,12 +5,10 @@
 }
 
 .information-title {
-  font-size: 38px;
   font-weight: 500;
 }
 
 .information-subtitle {
-  font-size: 26px;
   font-weight: 300;
 }
 
@@ -20,37 +18,24 @@
 }
 
 .information-t {
-  font-size: 26px;
   font-weight: 400;
   margin: 0px;
 }
 
 .information-p {
-  font-size: 18px;
   font-weight: 200;
   margin: 0px;
 }
 
 .information-d {
-  font-size: 16px;
   font-weight: 200;
   margin: 0px;
-  line-height: 2.3rem;
 }
 
 .skills-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-right: -70px;
-}
-
-.skill {
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  margin: 0px 70px 70px 0px;
-  background-color: white;
 }
 
 li {
@@ -60,4 +45,73 @@ li {
 ul {
   margin: 0px;
   padding: 0px;
+}
+
+/* For Mobile */
+@media screen and (max-width: 930px) {
+  .information-title {
+    font-size: 30px;
+  }
+  .information-subtitle {
+    font-size: 18px;
+  }
+  .information-t {
+    font-size: 18px;
+  }
+  .information-p {
+    font-size: 12px;
+  }
+  .information-d {
+    font-size: 11px;
+    line-height: 1.9rem;
+  }
+  .skills-container {
+    margin-right: -20px;
+  }
+}
+
+/* For Tablets */
+@media screen and (min-width: 930px) and (max-width: 1280px) {
+  .information-title {
+    font-size: 34px;
+  }
+  .information-subtitle {
+    font-size: 22px;
+  }
+  .information-t {
+    font-size: 22px;
+  }
+  .information-p {
+    font-size: 15px;
+  }
+  .information-d {
+    font-size: 14px;
+    line-height: 2.1rem;
+  }
+  .skills-container {
+    margin-right: -30px;
+  }
+}
+
+/* For Larger */
+@media screen and (min-width: 1280px) {
+  .information-title {
+    font-size: 38px;
+  }
+  .information-subtitle {
+    font-size: 26px;
+  }
+  .information-t {
+    font-size: 26px;
+  }
+  .information-p {
+    font-size: 18px;
+  }
+  .information-d {
+    font-size: 16px;
+    line-height: 2.3rem;
+  }
+  .skills-container {
+    margin-right: -40px;
+  }
 }

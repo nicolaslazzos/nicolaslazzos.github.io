@@ -5,53 +5,37 @@ import Pagination from "./components/Pagination";
 
 function App() {
   const [section, setSection] = React.useState(0);
+  const [orientation, setOrientation] = React.useState("landscape");
 
-  const sections = ["about.", "education.", "experience.", "secial media."];
+  const sections = ["about.", "education.", "experience.", "skills.", "contact."];
+
+  React.useEffect(() => {
+    onResize();
+
+    window.addEventListener("resize", onResize);
+
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  const onResize = () => {
+    const { innerWidth, innerHeight } = window;
+
+    if (innerHeight <= innerWidth) {
+      setOrientation("landscape");
+    } else {
+      setOrientation("portrait");
+    }
+  };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flex: 1,
-        flexDirection: "row",
-        justifyContent: "center",
-        height: "100vh"
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "flex-end",
-          padding: 40
-        }}
-      >
-        <Slider sections={4} onChange={(e) => setSection(e.section)} />
+    <div className="main-container">
+      <div className="area-container left-container">
+        <Slider sections={sections.length} onChange={(e) => setSection(e.section)} orientation={orientation} />
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          flex: 3,
-          justifyContent: "center",
-          padding: 40,
-          overflowY: "scroll"
-        }}
-      >
+      <div className="area-container center-container">
         <Information section={section} />
       </div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          flex: 0.5,
-          justifyContent: "center",
-          alignItems: "flex-start",
-          padding: 40
-        }}
-      >
+      <div className="area-container right-container">
         <Pagination page={sections[section]} />
       </div>
     </div>

@@ -1,16 +1,11 @@
 .slider-container {
   display: flex;
-  flex-direction: column;
   position: relative;
   align-items: center;
-  height: 80vh;
 }
 .slider-axis {
   position: absolute;
   display: flex;
-  top: 0;
-  bottom: 0;
-  width: 40%;
   margin: 20px;
   border-radius: 75px;
   background-color: #525252;
@@ -19,9 +14,6 @@
 .slider-constraints {
   position: absolute;
   display: flex;
-  top: 0;
-  bottom: 0;
-  width: 100%;
 }
 .slider-avatar {
   display: flex;
@@ -30,51 +22,99 @@
   cursor: pointer;
 }
 
-/* For Mobile */
-@media screen and (max-width: 540px) {
-  .slider-avatar {
-    height: 100px;
+/* For landscape */
+@media screen and (orientation: landscape) {
+  .slider-container {
+    flex-direction: column;
+    height: 80vh;
+  }
+  .slider-axis {
+    top: 0;
+    bottom: 0;
+    width: 40%;
+  }
+  .slider-constraints {
+    top: 0;
+    bottom: 0;
+    width: 100%;
   }
 
-  .slider-width {
-    width: 100px;
-  }
-}
-
-/* For Tablets */
-@media screen and (min-width: 540px) and (max-width: 780px) {
-  .slider-avatar {
-    height: 150px;
-  }
-
-  .slider-width {
-    width: 150px;
-  }
-}
-
-/* For Larger */
-@media screen and (min-width: 780px) {
-  .slider-avatar {
-    height: 200px;
+  /* For Mobile */
+  @media screen and (max-width: 780px) {
+    .slider-avatar {
+      height: 100px;
+    }
+    .slider-width {
+      width: 100px;
+    }
   }
 
-  .slider-width {
-    width: 200px;
+  /* For Tablets */
+  @media screen and (min-width: 780px) and (max-width: 1280px) {
+    .slider-avatar {
+      height: 150px;
+    }
+    .slider-width {
+      width: 150px;
+    }
+  }
+
+  /* For Larger */
+  @media screen and (min-width: 1280px) {
+    .slider-avatar {
+      height: 200px;
+    }
+    .slider-width {
+      width: 200px;
+    }
   }
 }
 
 /* For portrait */
 @media screen and (orientation: portrait) {
-  #toolbar {
+  .slider-container {
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
   }
-}
-
-/* For landscape */
-@media screen and (orientation: landscape) {
-  #toolbar {
-    position: fixed;
-    width: 2.65em;
+  .slider-axis {
+    left: 0;
+    right: 0;
+    height: 40%;
+  }
+  .slider-constraints {
+    left: 0;
+    right: 0;
     height: 100%;
+  }
+
+  /* For Mobile */
+  @media screen and (max-width: 780px) {
+    .slider-avatar {
+      width: 100px;
+    }
+    .slider-width {
+      height: 100px;
+    }
+  }
+
+  /* For Tablets */
+  @media screen and (min-width: 780px) and (max-width: 1280px) {
+    .slider-avatar {
+      width: 150px;
+    }
+    .slider-width {
+      height: 150px;
+    }
+  }
+
+  /* For Larger */
+  @media screen and (min-width: 1280px) {
+    .slider-avatar {
+      width: 200px;
+    }
+    .slider-width {
+      height: 200px;
+    }
   }
 }

@@ -2,26 +2,51 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  writing-mode: vertical-rl;
 }
 
 .pagination-text {
   display: flex;
   flex-direction: column;
   margin: 0px;
-  font-size: 50px;
   color: #525252;
   opacity: 0.8;
 }
 
-.rotation {
-  transform: rotate(-180deg);
-  /* Safari */
-  -webkit-transform: rotate(-180deg);
-  /* Firefox */
-  -moz-transform: rotate(-180deg);
-  /* IE */
-  -ms-transform: rotate(-180deg);
-  /* Opera */
-  -o-transform: rotate(-180deg);
+/* For landscape */
+@media screen and (orientation: landscape) {
+  .rotation {
+    transform: rotate(-180deg);
+    /* Safari */
+    -webkit-transform: rotate(-180deg);
+    /* Firefox */
+    -moz-transform: rotate(-180deg);
+    /* IE */
+    -ms-transform: rotate(-180deg);
+    /* Opera */
+    -o-transform: rotate(-180deg);
+  }
+  .pagination-container {
+    writing-mode: vertical-rl;
+  }
+}
+
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  .pagination-text {
+    font-size: 30px;
+  }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+  .pagination-text {
+    font-size: 40px;
+  }
+}
+
+/* For Larger */
+@media screen and (min-width: 780px) {
+  .pagination-text {
+    font-size: 50px;
+  }
 }

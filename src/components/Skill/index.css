@@ -1,0 +1,46 @@
+.skill-container {
+  display: flex;
+  flex-direction: row;
+  border-radius: 100px;
+  background-color: white;
+}
+
+.skill-text {
+  color: #1f1f1f;
+  margin: 0px;
+}
+
+/* For Mobile */
+@media screen and (max-width: 930px) {
+  .skill-container {
+    padding: 5px 15px 5px 15px;
+    height: 32px;
+    margin: 0px 20px 20px 0px;
+  }
+
+  .skill-text {
+    font-size: 12px;
+  }
+}
+
+/* For Tablets */
+@media screen and (min-width: 930px) and (max-width: 1280px) {
+  .skill-container {
+    padding: 10px 20px 10px 20px;
+    height: 36px;
+    margin: 0px 30px 30px 0px;
+  }
+
+  .skill-text {
+    font-size: 16px;
+  }
+}
+
+/* For Larger */
+@media screen and (min-width: 1280px) {
+  .skill-container {
+    padding: 15px 30px 15px 30px;
+    height: 40px;
+    margin: 0px 40px 40px 0px;
+  }
+}

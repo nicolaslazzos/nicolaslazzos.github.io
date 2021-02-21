@@ -24,18 +24,96 @@ canvas {
   width: 100%;
 }
 
-p {
-  color: white;
-  margin-top: 0px;
-  margin-bottom: 15px;
-  line-height: 2.5rem;
-}
-
 *:focus {
   outline: 0 !important;
 }
 
 ::-webkit-scrollbar {
-  width: 0;  /* Remove scrollbar space */
-  background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+p {
+  color: white;
+  margin-top: 0px;
+}
+
+/* For Mobile */
+@media screen and (max-width: 930px) {
+  p {
+    margin-bottom: 5px;
+    line-height: 2rem;
+  }
+}
+
+/* For Tablets */
+@media screen and (min-width: 930px) and (max-width: 1280px) {
+  p {
+    margin-bottom: 10px;
+    line-height: 2.2rem;
+  }
+}
+
+/* For Larger */
+@media screen and (min-width: 1280px) {
+  p {
+    margin-bottom: 15px;
+    line-height: 2.5rem;
+  }
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  height: 100vh;
+}
+.area-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+}
+.left-container {
+  align-items: flex-end;
+  flex: 0.8;
+}
+.center-container {
+  flex: 3;
+  overflow-y: scroll;
+}
+.right-container {
+  align-items: flex-start;
+  flex: 0.5;
+}
+
+/* For landscape */
+@media screen and (orientation: landscape) {
+  .main-container {
+    flex-direction: row;
+  }
+  .center-container {
+    justify-content: center;
+  }
+}
+
+/* For portrait */
+@media screen and (orientation: portrait) {
+  .main-container {
+    flex-direction: column;
+  }
+  .left-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .center-container {
+    justify-content: flex-start;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .right-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex: 0.3;
+  }
 }

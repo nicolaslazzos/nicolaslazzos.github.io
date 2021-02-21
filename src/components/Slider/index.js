@@ -5,7 +5,7 @@ import ProfilePicture from "../../assets/profile.jpg";
 import "./styles.css";
 
 function Slider(props) {
-  const { sections, orientation } = { sections: 1, orientation: "vertical", ...props };
+  const { sections, orientation } = { sections: 1, orientation: "landscape", ...props };
 
   const constraintsRef = React.useRef(null);
   const containerRef = React.useRef(null);
@@ -15,7 +15,7 @@ function Slider(props) {
 
     const data = {};
 
-    if (orientation === "vertical") {
+    if (orientation === "landscape") {
       data.drag = yDrag;
       data.init = y;
       data.length = height;
