@@ -1,12 +1,21 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "./styles.css";
 
-const Pagination = ({page}) => {
+const Pagination = ({ page }) => {
   return (
-    <div className="pagination-container rotation">
+    <motion.div
+      // initial="rotated"
+      // variants={{
+      //   rotated: {
+      //     rotate: 90
+      //   }
+      // }}
+      className="pagination-container rotation"
+    >
       <p className="pagination-text">{page}</p>
-    </div>
+    </motion.div>
   );
 };
 

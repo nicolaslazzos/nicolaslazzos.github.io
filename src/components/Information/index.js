@@ -1,6 +1,9 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 
+import ReactLogo from "../../assets/react.png";
+import NodeLogo from "../../assets/node.png";
+
 import "./styles.css";
 
 const Information = ({ section: sec }) => {
@@ -12,7 +15,11 @@ const Information = ({ section: sec }) => {
     controls.start("visible");
   }, []);
 
-  React.useEffect(async () => {
+  React.useEffect(() => {
+    animate();
+  }, [sec]);
+
+  const animate = async () => {
     controls.start("hidden");
 
     await new Promise((resolve) => setTimeout(resolve, 500));
@@ -20,7 +27,7 @@ const Information = ({ section: sec }) => {
     await setSection(sec);
 
     controls.start("visible");
-  }, [sec]);
+  };
 
   const sections = {
     0: [
@@ -43,7 +50,7 @@ const Information = ({ section: sec }) => {
         <p className="information-p">2015 - 2020</p>
         <p className="information-t">Information Systems Engineering</p>
         <p className="information-p">Universidad Tecnologica Nacional - Facultad Regional Cordoba</p>
-        <p className="information-p">GPA: 9.11 / 10</p>
+        <p className="information-d">GPA: 9.11 / 10</p>
       </div>,
       <div className="information-content">
         <p className="information-p">2009 - 2014</p>
@@ -61,7 +68,27 @@ const Information = ({ section: sec }) => {
         </p>
       </div>
     ],
-    3: []
+    3: [
+      <div className="information-content">
+        <div className="skills-container">
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+          <motion.div className="skill"></motion.div>
+        </div>
+      </div>
+    ]
   };
 
   const variants = {
