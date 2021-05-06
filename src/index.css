@@ -1,119 +1,35 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
-
 body {
-  margin: 0;
-  font-family: "Poppins", "Segoe UI", "Roboto", "Droid Sans", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-}
-
-canvas {
-  display: block;
-  background: #1f1f1f;
-  position: fixed;
-  z-index: -1;
+	margin: 0;
+	font-family: "ms_sans_serif", "Segoe UI", "Roboto", "Droid Sans", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 #root {
-  position: absolute;
-  background-color: transparent;
-  width: 100%;
+	position: absolute;
+	background-color: #008080;
+	width: 100%;
 }
 
 *:focus {
-  outline: 0 !important;
+	outline: 0 !important;
 }
 
 ::-webkit-scrollbar {
-  width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
+	width: 0; /* Remove scrollbar space */
+	background: transparent; /* Optional: just make scrollbar invisible */
 }
 
-p {
-  color: white;
-  margin-top: 0px;
-}
-
-/* For Mobile */
-@media screen and (max-width: 930px) {
-  p {
-    margin-bottom: 5px;
-    line-height: 2rem;
-  }
-}
-
-/* For Tablets */
-@media screen and (min-width: 930px) and (max-width: 1280px) {
-  p {
-    margin-bottom: 10px;
-    line-height: 2.2rem;
-  }
-}
-
-/* For Larger */
-@media screen and (min-width: 1280px) {
-  p {
-    margin-bottom: 15px;
-    line-height: 2.5rem;
-  }
+div .flex {
+	display: flex;
+	position: relative;
+	flex-direction: column;
 }
 
 .main-container {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  height: 100vh;
-}
-.area-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 40px;
-}
-.left-container {
-  align-items: flex-end;
-  flex: 0.8;
-}
-.center-container {
-  flex: 3;
-  overflow-y: scroll;
-}
-.right-container {
-  align-items: flex-start;
-  flex: 0.5;
-}
-
-/* For landscape */
-@media screen and (orientation: landscape) {
-  .main-container {
-    flex-direction: row;
-  }
-  .center-container {
-    justify-content: center;
-  }
-}
-
-/* For portrait */
-@media screen and (orientation: portrait) {
-  .main-container {
-    flex-direction: column;
-  }
-  .left-container {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .center-container {
-    justify-content: flex-start;
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-  .right-container {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    flex: 0.3;
-  }
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	justify-content: center;
+	height: 100vh;
 }
