@@ -12,7 +12,7 @@ export interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({ text, icon, ...props }) => {
 	return (
 		<R95Button {...props}>
-			<Icon name={icon} size={20} style={{ marginRight: 6 }} />
+			<Icon name={icon} size={22} style={{ marginRight: 6 }} />
 			{text}
 		</R95Button>
 	);
