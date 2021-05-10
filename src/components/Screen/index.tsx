@@ -1,7 +1,6 @@
 import React from "react";
-import {  } from "react95";
 
-import {AppBar} from '../AppBar'
+import { AppBar } from "../AppBar";
 
 export interface ScreenProps {
 	children?: React.ReactNode;
