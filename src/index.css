@@ -1,35 +1,36 @@
 body {
-	margin: 0;
-	font-family: "ms_sans_serif", "Segoe UI", "Roboto", "Droid Sans", sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: "ms_sans_serif", "Segoe UI", "Roboto", "Droid Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
-	position: absolute;
-	background-color: #008080;
-	width: 100%;
+  position: absolute;
+  background-color: #008080;
+  width: 100%;
 }
 
 *:focus {
-	outline: 0 !important;
+  outline: 0 !important;
 }
 
 ::-webkit-scrollbar {
-	width: 0; /* Remove scrollbar space */
-	background: transparent; /* Optional: just make scrollbar invisible */
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
 }
 
 div .flex {
-	display: flex;
-	position: relative;
-	flex-direction: column;
+  display: flex;
+  position: relative;
+  flex-direction: column;
 }
 
 .main-container {
-	display: flex;
-	flex: 1;
-	flex-direction: column;
-	justify-content: center;
-	height: 100vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
 }
